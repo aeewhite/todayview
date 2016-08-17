@@ -14,15 +14,6 @@ NSString* formatCalenderEvent(EKEvent* event);
 
 int main(int argc, char ** argv) {
     @autoreleasepool {
-        NSCalendar *calendar = [NSCalendar currentCalendar];
-        EKEventStore *store = [[EKEventStore alloc] init];
-        [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError * _Nullable error) {
-            if(!granted){
-                NSLog(@"Access to Calendar is necessary to use this program");
-                exit(1);
-            }
-        }];
-        
         //Command Line Argument Parsing
         GBSettings *factoryDefaults = [GBSettings settingsWithName:@"Factory" parent:nil];
         [factoryDefaults setInteger:0 forKey:@"daysFromNow"];
@@ -44,6 +35,15 @@ int main(int argc, char ** argv) {
             [options printHelp];
             return 0;
         }
+        
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        EKEventStore *store = [[EKEventStore alloc] init];
+        [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError * _Nullable error) {
+            if(!granted){
+                NSLog(@"Access to Calendar is necessary to use this program");
+                exit(1);
+            }
+        }];
         
         
         // Create the start date components
@@ -74,7 +74,7 @@ int main(int argc, char ** argv) {
         NSArray *events = [store eventsMatchingPredicate:predicate];
         
         for (EKEvent* event in events) {
-            NSLog(@"%@", formatCalenderEvent(event));
+            printf("%s\n", [formatCalenderEvent(event) UTF8String]);
         }
     }
     return 0;
@@ -86,7 +86,7 @@ NSString* formatCalenderEvent(EKEvent* event){
     
     //All Day Events
     if([event isAllDay]){
-        out = [NSString stringWithFormat:@"(All Day) %@", out];
+        out = [NSString stringWithFormat:@"%@ (All Day)", out];
     }
     else{
         //Event Times

@@ -5,6 +5,7 @@
 ## Build generated
 build/
 DerivedData/
+todayview
 
 ## Various settings
 *.pbxuser
