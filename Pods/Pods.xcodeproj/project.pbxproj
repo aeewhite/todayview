@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A2942B7DCD5532F76BD9E235F45AD12 /* GBCommandLineParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2678127996C0E4AE077F3297F9FC2D3E /* GBCommandLineParser.m */; };
+		1FF70489F55F1CF71F25B7953C402E37 /* GBCommandLineParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 0997AF5C5FE48DE99D8B0BEA59124130 /* GBCommandLineParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BC9CA6C185AF240DF142D2D827B6F6B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */; };
+		5534B244492E0DD3AB9E1D8168EB5AE7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */; };
+		7184A459D84667AD2E859C2993409E09 /* GBSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 6589AC71A6297DC0959D1911D8FA7A18 /* GBSettings.m */; };
+		85D7B659A0FAFE12F37EB5DC8452C5A9 /* GBCli-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 77DEC91FC7B396447943CF2ED576005B /* GBCli-dummy.m */; };
+		8E9946A5AE16B205EEE884F02A08C557 /* GBSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 43158DD6A3A27C7C19625181C74A1D1B /* GBSettings.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F5FB561B3EF6D2232BF63F09A20C219 /* GBOptionsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 123EEF85959ED07C9302947D5A501941 /* GBOptionsHelper.m */; };
+		92040F8F1719BEF808E55D64EC2E9911 /* GBPrint.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DE13A0CEA328116DFB3DCEA67CDDED8 /* GBPrint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		98BD1BFFB8EC899C0FA7A013318130A0 /* GBPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = EE14827F1459BC28523DFCA64045F594 /* GBPrint.m */; };
+		A26BC2B9980EA4D16AA6F24ADB72CBF9 /* Pods-todayview-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 68703661DC46D44A889AA89FF3E38ED4 /* Pods-todayview-dummy.m */; };
+		CD8AE559506B49AA3A92AE758E365096 /* GBCli.h in Headers */ = {isa = PBXBuildFile; fileRef = FAE60CCFF15B1BF764F45B752D3E364D /* GBCli.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F3654ABAE0E04DDFAD20D0416FA33B45 /* GBOptionsHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F4859CDD9979B2EE5C5D7C83836F352 /* GBOptionsHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE558D90F59E7BCC3F88DA2067A42CEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0131DC3EDEE65412C279FAEE4929EC22;
+			remoteInfo = GBCli;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0997AF5C5FE48DE99D8B0BEA59124130 /* GBCommandLineParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GBCommandLineParser.h; path = GBCli/src/GBCommandLineParser.h; sourceTree = "<group>"; };
+		123EEF85959ED07C9302947D5A501941 /* GBOptionsHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GBOptionsHelper.m; path = GBCli/src/GBOptionsHelper.m; sourceTree = "<group>"; };
+		1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		2678127996C0E4AE077F3297F9FC2D3E /* GBCommandLineParser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GBCommandLineParser.m; path = GBCli/src/GBCommandLineParser.m; sourceTree = "<group>"; };
+		2DE13A0CEA328116DFB3DCEA67CDDED8 /* GBPrint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GBPrint.h; path = GBCli/src/GBPrint.h; sourceTree = "<group>"; };
+		35D840FD8C4ABEFB16CCE0C0BB4B5CD8 /* libPods-todayview.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-todayview.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		40679E5B29E83EFEFFF23B895CB661A7 /* GBCli.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GBCli.xcconfig; sourceTree = "<group>"; };
+		43158DD6A3A27C7C19625181C74A1D1B /* GBSettings.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GBSettings.h; path = GBCli/src/GBSettings.h; sourceTree = "<group>"; };
+		4BED2FD29CB876B84D2CAA68162D13A4 /* Pods-todayview-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-todayview-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4CA7420AF7E6438D7580D4C1FED48281 /* Pods-todayview-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-todayview-resources.sh"; sourceTree = "<group>"; };
+		53F35F746778AE5B0FDC2ECBCB90EF33 /* Pods-todayview-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-todayview-frameworks.sh"; sourceTree = "<group>"; };
+		6589AC71A6297DC0959D1911D8FA7A18 /* GBSettings.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GBSettings.m; path = GBCli/src/GBSettings.m; sourceTree = "<group>"; };
+		68703661DC46D44A889AA89FF3E38ED4 /* Pods-todayview-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-todayview-dummy.m"; sourceTree = "<group>"; };
+		77DEC91FC7B396447943CF2ED576005B /* GBCli-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GBCli-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F4859CDD9979B2EE5C5D7C83836F352 /* GBOptionsHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GBOptionsHelper.h; path = GBCli/src/GBOptionsHelper.h; sourceTree = "<group>"; };
+		9FE04EED3D4DBFDAB3705E56FFC5F2AE /* libGBCli.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGBCli.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF6CE9BED925D49B28CE1AC14E8C9BF4 /* Pods-todayview-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-todayview-acknowledgements.plist"; sourceTree = "<group>"; };
+		B92E21A959101545DD8EAFC30BF776BC /* Pods-todayview.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-todayview.debug.xcconfig"; sourceTree = "<group>"; };
+		BCCB3330EF1F0A64F65DFA2A408BFD74 /* GBCli-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GBCli-prefix.pch"; sourceTree = "<group>"; };
+		C6C9FAFD448302700478E9EF4C6906D9 /* Pods-todayview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-todayview.release.xcconfig"; sourceTree = "<group>"; };
+		EE14827F1459BC28523DFCA64045F594 /* GBPrint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GBPrint.m; path = GBCli/src/GBPrint.m; sourceTree = "<group>"; };
+		FAE60CCFF15B1BF764F45B752D3E364D /* GBCli.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GBCli.h; path = GBCli/src/GBCli.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C6DDFBC58CDC2B0284A039D95E5B0D22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2BC9CA6C185AF240DF142D2D827B6F6B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E80BB96FD79E9ADF4B701BEA000F4C11 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5534B244492E0DD3AB9E1D8168EB5AE7 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2304ECC81D3E8A8228A9F78C8E86F1A3 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				40679E5B29E83EFEFFF23B895CB661A7 /* GBCli.xcconfig */,
+				77DEC91FC7B396447943CF2ED576005B /* GBCli-dummy.m */,
+				BCCB3330EF1F0A64F65DFA2A408BFD74 /* GBCli-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GBCli";
+			sourceTree = "<group>";
+		};
+		28C17CEF104526ACA07B6EEE217EC43E /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				1CA6EBC2E57D96052268211209D6AA52 /* Cocoa.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+		39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				28C17CEF104526ACA07B6EEE217EC43E /* OS X */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		54BB4B6DD3A0B199CF984CA5D5A566D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92DC4EEC13581A1F31460023023F8368 /* GBCli */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		65652A9006B806F9C1D4C0A863DCA874 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F40FD52DE6C39D9C448A7523B471C1D8 /* Pods-todayview */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				39E9EE8210D861DFD82346C1F5EB7218 /* Frameworks */,
+				54BB4B6DD3A0B199CF984CA5D5A566D2 /* Pods */,
+				D5C6840BB0CBF96BCB848C421C0ABEFA /* Products */,
+				65652A9006B806F9C1D4C0A863DCA874 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		92DC4EEC13581A1F31460023023F8368 /* GBCli */ = {
+			isa = PBXGroup;
+			children = (
+				FAE60CCFF15B1BF764F45B752D3E364D /* GBCli.h */,
+				0997AF5C5FE48DE99D8B0BEA59124130 /* GBCommandLineParser.h */,
+				2678127996C0E4AE077F3297F9FC2D3E /* GBCommandLineParser.m */,
+				9F4859CDD9979B2EE5C5D7C83836F352 /* GBOptionsHelper.h */,
+				123EEF85959ED07C9302947D5A501941 /* GBOptionsHelper.m */,
+				2DE13A0CEA328116DFB3DCEA67CDDED8 /* GBPrint.h */,
+				EE14827F1459BC28523DFCA64045F594 /* GBPrint.m */,
+				43158DD6A3A27C7C19625181C74A1D1B /* GBSettings.h */,
+				6589AC71A6297DC0959D1911D8FA7A18 /* GBSettings.m */,
+				2304ECC81D3E8A8228A9F78C8E86F1A3 /* Support Files */,
+			);
+			path = GBCli;
+			sourceTree = "<group>";
+		};
+		D5C6840BB0CBF96BCB848C421C0ABEFA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FE04EED3D4DBFDAB3705E56FFC5F2AE /* libGBCli.a */,
+				35D840FD8C4ABEFB16CCE0C0BB4B5CD8 /* libPods-todayview.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F40FD52DE6C39D9C448A7523B471C1D8 /* Pods-todayview */ = {
+			isa = PBXGroup;
+			children = (
+				4BED2FD29CB876B84D2CAA68162D13A4 /* Pods-todayview-acknowledgements.markdown */,
+				AF6CE9BED925D49B28CE1AC14E8C9BF4 /* Pods-todayview-acknowledgements.plist */,
+				68703661DC46D44A889AA89FF3E38ED4 /* Pods-todayview-dummy.m */,
+				53F35F746778AE5B0FDC2ECBCB90EF33 /* Pods-todayview-frameworks.sh */,
+				4CA7420AF7E6438D7580D4C1FED48281 /* Pods-todayview-resources.sh */,
+				B92E21A959101545DD8EAFC30BF776BC /* Pods-todayview.debug.xcconfig */,
+				C6C9FAFD448302700478E9EF4C6906D9 /* Pods-todayview.release.xcconfig */,
+			);
+			name = "Pods-todayview";
+			path = "Target Support Files/Pods-todayview";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C977C14A0D1D019F272C939CD332CF9B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD8AE559506B49AA3A92AE758E365096 /* GBCli.h in Headers */,
+				1FF70489F55F1CF71F25B7953C402E37 /* GBCommandLineParser.h in Headers */,
+				F3654ABAE0E04DDFAD20D0416FA33B45 /* GBOptionsHelper.h in Headers */,
+				92040F8F1719BEF808E55D64EC2E9911 /* GBPrint.h in Headers */,
+				8E9946A5AE16B205EEE884F02A08C557 /* GBSettings.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0131DC3EDEE65412C279FAEE4929EC22 /* GBCli */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92455F048D98FA4C0D38D601676833D8 /* Build configuration list for PBXNativeTarget "GBCli" */;
+			buildPhases = (
+				67C0CCF83244264B8E68445E061C7A91 /* Sources */,
+				E80BB96FD79E9ADF4B701BEA000F4C11 /* Frameworks */,
+				C977C14A0D1D019F272C939CD332CF9B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GBCli;
+			productName = GBCli;
+			productReference = 9FE04EED3D4DBFDAB3705E56FFC5F2AE /* libGBCli.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		F3152F2AAF35E13FBD8616E7C1A15631 /* Pods-todayview */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B42ACBC63B6809C7D6D68A1E64059272 /* Build configuration list for PBXNativeTarget "Pods-todayview" */;
+			buildPhases = (
+				CAFE31F34F50B53563FD5840E88FE1BB /* Sources */,
+				C6DDFBC58CDC2B0284A039D95E5B0D22 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E247063937244F4DB0D18E6771DA9CC /* PBXTargetDependency */,
+			);
+			name = "Pods-todayview";
+			productName = "Pods-todayview";
+			productReference = 35D840FD8C4ABEFB16CCE0C0BB4B5CD8 /* libPods-todayview.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = D5C6840BB0CBF96BCB848C421C0ABEFA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0131DC3EDEE65412C279FAEE4929EC22 /* GBCli */,
+				F3152F2AAF35E13FBD8616E7C1A15631 /* Pods-todayview */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		67C0CCF83244264B8E68445E061C7A91 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85D7B659A0FAFE12F37EB5DC8452C5A9 /* GBCli-dummy.m in Sources */,
+				0A2942B7DCD5532F76BD9E235F45AD12 /* GBCommandLineParser.m in Sources */,
+				8F5FB561B3EF6D2232BF63F09A20C219 /* GBOptionsHelper.m in Sources */,
+				98BD1BFFB8EC899C0FA7A013318130A0 /* GBPrint.m in Sources */,
+				7184A459D84667AD2E859C2993409E09 /* GBSettings.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CAFE31F34F50B53563FD5840E88FE1BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A26BC2B9980EA4D16AA6F24ADB72CBF9 /* Pods-todayview-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2E247063937244F4DB0D18E6771DA9CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = GBCli;
+			target = 0131DC3EDEE65412C279FAEE4929EC22 /* GBCli */;
+			targetProxy = DE558D90F59E7BCC3F88DA2067A42CEB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0577E960F68FF02722D75DA2D211E3A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		3B70E848FF37238948A91FB9D75E22AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40679E5B29E83EFEFFF23B895CB661A7 /* GBCli.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GBCli/GBCli-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		477BBB54846B3C68041E0DE824385CE8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40679E5B29E83EFEFFF23B895CB661A7 /* GBCli.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GBCli/GBCli-prefix.pch";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		52157BCB567D9F1C7AB801C9337F7D0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6C9FAFD448302700478E9EF4C6906D9 /* Pods-todayview.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		578820E498FFD85CA5D93A33D365FBED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		98CBF27740D14A6BE1452A1E91A1F639 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B92E21A959101545DD8EAFC30BF776BC /* Pods-todayview.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXECUTABLE_PREFIX = lib;
+				GCC_NO_COMMON_BLOCKS = YES;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0577E960F68FF02722D75DA2D211E3A8 /* Debug */,
+				578820E498FFD85CA5D93A33D365FBED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		92455F048D98FA4C0D38D601676833D8 /* Build configuration list for PBXNativeTarget "GBCli" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B70E848FF37238948A91FB9D75E22AB /* Debug */,
+				477BBB54846B3C68041E0DE824385CE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B42ACBC63B6809C7D6D68A1E64059272 /* Build configuration list for PBXNativeTarget "Pods-todayview" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98CBF27740D14A6BE1452A1E91A1F639 /* Debug */,
+				52157BCB567D9F1C7AB801C9337F7D0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
