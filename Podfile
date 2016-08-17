@@ -3,6 +3,6 @@
 
 
 target 'todayview' do
-	pod 'BRLOptionParser', '~> 0.3.1'
+    pod 'GBCli'
 end
 
