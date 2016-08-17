@@ -21,9 +21,6 @@ int main(int argc, char ** argv) {
                 NSLog(@"Access to Calendar is necessary to use this program");
                 exit(1);
             }
-            else{
-                
-            }
         }];
         
         //Command Line Argument Parsing
@@ -32,12 +29,12 @@ int main(int argc, char ** argv) {
         GBSettings *settings = [GBSettings settingsWithName:@"CmdLine" parent:factoryDefaults];
         
         GBCommandLineParser *parser = [[GBCommandLineParser alloc] init];
-        [parser registerOption:@"daysFromNow" shortcut:'d' requirement:GBValueOptional];
-        
         
         GBOptionsHelper *options = [[GBOptionsHelper alloc] init];
         [options registerOption:'d' long:@"daysFromNow" description:@"Which day to print, 0 is today" flags:GBOptionRequiredValue];
-        [options registerOption:'h' long:@"help" description:@"Display this help and exit" flags:GBOptionNoValue];
+        [options registerOption:'h' long:@"help" description:@"Display this help and exit"
+                                                    flags:GBOptionNoValue|GBOptionNoPrint];
+        options.printHelpHeader = ^{ return @"Usage: todayview [-d days]"; };
         
         [parser registerSettings:settings];
         [parser registerOptions:options];
