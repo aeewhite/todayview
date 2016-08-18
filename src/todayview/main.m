@@ -10,7 +10,19 @@
 #import <GBCli/GBCli.h>
 @import EventKit;
 
+#define ANSI_BOLD          "\x1b[1m"
+#define ANSI_COLOR_RED     "\x1b[31m"
+#define ANSI_COLOR_GREEN   "\x1b[32m"
+#define ANSI_COLOR_YELLOW  "\x1b[33m"
+#define ANSI_COLOR_BLUE    "\x1b[34m"
+#define ANSI_COLOR_MAGENTA "\x1b[35m"
+#define ANSI_COLOR_CYAN    "\x1b[36m"
+#define ANSI_COLOR_RESET   "\x1b[0m"
+
+
 NSString* formatCalenderEvent(EKEvent* event, GBSettings* settings);
+
+
 
 int main(int argc, char ** argv) {
     @autoreleasepool {
@@ -18,6 +30,7 @@ int main(int argc, char ** argv) {
         GBSettings *factoryDefaults = [GBSettings settingsWithName:@"Factory" parent:nil];
         [factoryDefaults setInteger:0 forKey:@"daysFromNow"];
         [factoryDefaults setBool:false forKey:@"period"];
+        [factoryDefaults setBool:false forKey:@"color"];
         GBSettings *settings = [GBSettings settingsWithName:@"CmdLine" parent:factoryDefaults];
         
         GBCommandLineParser *parser = [[GBCommandLineParser alloc] init];
@@ -25,6 +38,8 @@ int main(int argc, char ** argv) {
         GBOptionsHelper *options = [[GBOptionsHelper alloc] init];
         [options registerOption:'d' long:@"daysFromNow" description:@"Which day to print, 0 is today" flags:GBOptionRequiredValue];
         [options registerOption:'p' long:@"period" description:@"Display period (AM/PM)" flags:GBOptionNoValue];
+        [options registerOption:'c' long:@"color" description:@"Colorize output" flags:GBOptionNoValue];
+        [options registerOption:'v' long:@"values" description:@"print input values" flags:GBOptionNoValue];
         [options registerOption:'h' long:@"help" description:@"Display this help and exit"
                                                     flags:GBOptionNoValue|GBOptionNoPrint];
         options.printHelpHeader = ^{ return @"Usage: todayview [-d days] [-p]"; };
@@ -37,6 +52,10 @@ int main(int argc, char ** argv) {
             [options printHelp];
             return 0;
         }
+        if ([settings boolForKey:@"values"]) {
+            [options printValuesFromSettings:settings];
+            return 0;
+        }
         
         NSCalendar *calendar = [NSCalendar currentCalendar];
         EKEventStore *store = [[EKEventStore alloc] init];
@@ -46,7 +65,6 @@ int main(int argc, char ** argv) {
                 exit(1);
             }
         }];
-        
         
         // Create the start date components
         NSDate* date = NSDate.date;
@@ -83,17 +101,20 @@ int main(int argc, char ** argv) {
 }
 
 NSString* formatCalenderEvent(EKEvent* event, GBSettings* settings){
-    NSString* out = [[NSString alloc] init];
-    out = [event title];
     
-    //All Day Events
+    NSMutableArray* stringArray = [NSMutableArray arrayWithCapacity:9];
+    
+    //Times
+    if([settings boolForKey:@"color"]){
+        [stringArray addObject: [NSString stringWithFormat:@"%s",ANSI_COLOR_GREEN]];
+    }
     if([event isAllDay]){
         //Extra padding for AM/PM
         if([settings boolForKey:@"period"]){
-            out = [NSString stringWithFormat:@"(All Day)         \t %@", out];
+            [stringArray addObject:[NSString stringWithFormat:@"(All Day)         \t"]];
         }
         else{
-            out = [NSString stringWithFormat:@"(All Day)     \t %@", out];
+           [stringArray addObject: [NSString stringWithFormat:@"(All Day)     \t"]];
         }
     }
     else{
@@ -109,14 +130,34 @@ NSString* formatCalenderEvent(EKEvent* event, GBSettings* settings){
         NSString* startTime = [formatter stringFromDate:[event startDate]];
         NSString* endTime = [formatter stringFromDate:[event endDate]];
         
-        out = [NSString stringWithFormat:@"(%@-%@)\t %@", startTime, endTime, out];
+        [stringArray addObject: [NSString stringWithFormat:@"(%@-%@)\t", startTime, endTime]];
+    }
+    if([settings boolForKey:@"color"]){
+        [stringArray addObject: [NSString stringWithFormat:@"%s", ANSI_COLOR_RESET]];
     }
     
+    //Event Name
+    if([settings boolForKey:@"color"]){
+        [stringArray addObject: [NSString stringWithFormat:@"%s%s",ANSI_COLOR_CYAN, ANSI_BOLD]];
+    }
+    [stringArray addObject:[event title]];
+    if([settings boolForKey:@"color"]){
+        [stringArray addObject: [NSString stringWithFormat:@"%s", ANSI_COLOR_RESET]];
+    }
+    
+
     //Locations
+    if([settings boolForKey:@"color"]){
+        [stringArray addObject: [NSString stringWithFormat:@"%s",ANSI_COLOR_MAGENTA]];
+    }
     if([[event location] length]!= 0){
         //Edit location to single line
         NSString* shortLoc = [[event location] componentsSeparatedByString:@"\n"][0];
-        out = [NSString stringWithFormat:@"%@ \t[%@]", out, shortLoc];
+        [stringArray addObject: [NSString stringWithFormat:@" \t[%@]", shortLoc]];
     }
-    return out;
+    if([settings boolForKey:@"color"]){
+        [stringArray addObject: [NSString stringWithFormat:@"%s", ANSI_COLOR_RESET]];
+    }
+    
+    return [[stringArray valueForKey:@"description"] componentsJoinedByString:@" "];;
 }
