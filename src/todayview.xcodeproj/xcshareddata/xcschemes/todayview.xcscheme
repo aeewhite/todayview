@@ -64,7 +64,11 @@
       <CommandLineArguments>
          <CommandLineArgument
             argument = "--help"
-            isEnabled = "YES">
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-p"
+            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "-d 1"

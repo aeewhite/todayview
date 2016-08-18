@@ -10,22 +10,24 @@
 #import <GBCli/GBCli.h>
 @import EventKit;
 
-NSString* formatCalenderEvent(EKEvent* event);
+NSString* formatCalenderEvent(EKEvent* event, GBSettings* settings);
 
 int main(int argc, char ** argv) {
     @autoreleasepool {
         //Command Line Argument Parsing
         GBSettings *factoryDefaults = [GBSettings settingsWithName:@"Factory" parent:nil];
         [factoryDefaults setInteger:0 forKey:@"daysFromNow"];
+        [factoryDefaults setBool:false forKey:@"period"];
         GBSettings *settings = [GBSettings settingsWithName:@"CmdLine" parent:factoryDefaults];
         
         GBCommandLineParser *parser = [[GBCommandLineParser alloc] init];
         
         GBOptionsHelper *options = [[GBOptionsHelper alloc] init];
         [options registerOption:'d' long:@"daysFromNow" description:@"Which day to print, 0 is today" flags:GBOptionRequiredValue];
+        [options registerOption:'p' long:@"period" description:@"Display period (AM/PM)" flags:GBOptionNoValue];
         [options registerOption:'h' long:@"help" description:@"Display this help and exit"
                                                     flags:GBOptionNoValue|GBOptionNoPrint];
-        options.printHelpHeader = ^{ return @"Usage: todayview [-d days]"; };
+        options.printHelpHeader = ^{ return @"Usage: todayview [-d days] [-p]"; };
         
         [parser registerSettings:settings];
         [parser registerOptions:options];
@@ -74,28 +76,40 @@ int main(int argc, char ** argv) {
         NSArray *events = [store eventsMatchingPredicate:predicate];
         
         for (EKEvent* event in events) {
-            printf("%s\n", [formatCalenderEvent(event) UTF8String]);
+            printf("%s\n", [formatCalenderEvent(event, settings) UTF8String]);
         }
     }
     return 0;
 }
 
-NSString* formatCalenderEvent(EKEvent* event){
+NSString* formatCalenderEvent(EKEvent* event, GBSettings* settings){
     NSString* out = [[NSString alloc] init];
     out = [event title];
     
     //All Day Events
     if([event isAllDay]){
-        out = [NSString stringWithFormat:@"%@ (All Day)", out];
+        //Extra padding for AM/PM
+        if([settings boolForKey:@"period"]){
+            out = [NSString stringWithFormat:@"(All Day)         \t %@", out];
+        }
+        else{
+            out = [NSString stringWithFormat:@"(All Day)     \t %@", out];
+        }
     }
     else{
         //Event Times
         NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"hh:mm"];
+        if([settings boolForKey:@"period"]){
+            [formatter setDateFormat:@"hh:mma"];
+        }
+        else{
+            [formatter setDateFormat:@"hh:mm"];
+        }
         
         NSString* startTime = [formatter stringFromDate:[event startDate]];
         NSString* endTime = [formatter stringFromDate:[event endDate]];
-        out = [NSString stringWithFormat:@"%@ \t(%@-%@)", out, startTime, endTime];
+        
+        out = [NSString stringWithFormat:@"(%@-%@)\t %@", startTime, endTime, out];
     }
     
     //Locations
